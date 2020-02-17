@@ -3,6 +3,7 @@ package core
 import (
 	"fmt"
 	"os"
+    "path/filepath"
 
 	"github.com/netgusto/nodebook/src/core/shared/recipe"
 	"github.com/netgusto/nodebook/src/core/shared/service"
@@ -13,6 +14,9 @@ func baseServices(notebooksPath string) (*service.RecipeRegistry, *service.Noteb
 	// Recipe registry
 	recipeRegistry := service.NewRecipeRegistry()
 	recipe.AddRecipesToRegistry(recipeRegistry)
+
+    fmt.Println("the path is ",notebooksPath)
+    fmt.Println("the abs is ", filepath.Abs(notebooksPath))
 
 	// Notebook registry
 	nbRegistry := service.NewNotebookRegistry(notebooksPath, recipeRegistry)

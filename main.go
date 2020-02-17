@@ -14,6 +14,7 @@ var _ = pkger.Include("/src/recipes/")
 
 func main() {
 
+    fmt.Println("hello Terry")
 	webCmd := kingpin.Command("web", "Web")
 	webCmdPath := webCmd.Arg("notebookspath", "path to notebooks").Default(".").ExistingDir()
 	webCmdDocker := webCmd.Flag("docker", "Use docker").Bool()
